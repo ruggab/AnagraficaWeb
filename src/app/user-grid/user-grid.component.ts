@@ -7,13 +7,14 @@ import { UserService } from "../user.service";
   templateUrl: './user-grid.component.html',
   styleUrls: ['./user-grid.component.css']
 })
+
 export class UserGridComponent implements OnInit {
   //users!: Observable<User[]>; 
   rowData: any;
   gridOptions:GridOptions;
   
   columnDefs = [
-    { field: 'tessera' },
+    { field: 'tessera',  },
     { field: 'nome' },
     { field: 'cognome', sortable: true, filter: true },
     { field: 'data'},
@@ -54,10 +55,10 @@ onBtnExport(): void {
   const params = {
     columnGroups: true,
     allColumns: true,
-    fileName: 'filename_of_your_choice.csv',
-    columnSeparator: ';'
+    fileName: 'AnagraficaVro.excel',
+    columnSeparator: ','
   };
-  this.gridOptions.api?.exportDataAsCsv(params);
+  this.gridOptions.api?.exportDataAsExcel(params);
 }
 
 

@@ -17,7 +17,7 @@ export class ImportFileComponent implements OnInit {
   gridOptions:GridOptions;
   
   columnDefs = [
-    { field: 'tessera', width: 100},
+    { field: 'tessera', width: 150},
     { field: 'nome', width: 100 },
     { field: 'cognome', sortable: true, filter: true, width: 100 },
     { field: 'data', width: 150},
@@ -72,11 +72,19 @@ constructor(private service: ImportFileService) {
     const params = {
       columnGroups: true,
       allColumns: true,
-      fileName: 'filename_of_your_choice.csv',
-      columnSeparator: ';'
+      fileName: 'export.xls',
+      //processCellCallback: formattingFunction,
+      skipHeaders: true,
+      //columnSeparator: ';'
     };
-    this.gridOptions.api?.exportDataAsCsv(params);
+    //this.gridOptions.api.exportDataAsExcel(excelParams)
+    this.gridOptions.api?.exportDataAsExcel(params);
   }
+
+
+
+
+  
 
 } 
 
