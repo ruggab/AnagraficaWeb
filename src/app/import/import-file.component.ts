@@ -16,7 +16,7 @@ export class ImportFileComponent implements OnInit {
   rowData: any;
   gridOptions:GridOptions;
   
-  columnDefs = [
+  columnDefs = [ 
     { field: 'tessera', width: 100,  filter:'agTextColumnFilter'},
     { field: 'nome', width: 100 },
     { field: 'cognome', sortable: true, filter: true, width: 100 },
